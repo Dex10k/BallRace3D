@@ -29,8 +29,10 @@ public class PlayerMovement : MonoBehaviour
     public Transform CameraOffsetController;
     public Transform CameraOffsetDistanceController;
 
-    public float CameraMaxHeight = 20;
-    public float CameraMinHeight = 1;
+    public float CameraMaxHeight = 10;
+    public float CameraMinHeight = 3;
+
+    public float CameraMinimumDistance = 5;
 
 
     // Start is called before the first frame update
@@ -120,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
         float CameraHeight = CameraOffsetController.position.y;
-            CameraOffsetDistanceController.transform.localPosition = new Vector3(0, 0, -1 * (CameraMaxHeight - CameraHeight + 5f) );
+            CameraOffsetDistanceController.transform.localPosition = new Vector3(0, 0, -1 * ((CameraMaxHeight - CameraHeight) + CameraMinimumDistance) );
         
     }
 
