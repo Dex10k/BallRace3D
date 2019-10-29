@@ -23,8 +23,11 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Range(1, 100)]
-    public float CameraSensitivity;
+    public float CameraSensitivityHorizontal;
+    [Range(1, 100)]
+    public float CameraSensitivityVertical;
     public Transform CameraOffsetController;
+    public Transform CameraOffsetDistanceController;
 
     public float CameraMaxHeight = 20;
     public float CameraMinHeight = 1;
@@ -100,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 NewOffsetPosition = CameraOffsetController.transform.position;
 
-            NewOffsetPosition.y += (Input.GetAxisRaw("AimVertical") * CameraSensitivity/2 * Time.deltaTime);
+            NewOffsetPosition.y += (Input.GetAxisRaw("AimVertical") * CameraSensitivityVertical * Time.deltaTime *-1f);
 
             if (NewOffsetPosition.y < CameraMinHeight)
             {
@@ -110,9 +113,15 @@ public class PlayerMovement : MonoBehaviour
                 NewOffsetPosition.y = CameraMaxHeight;
             }
 
+            
 
             CameraOffsetController.transform.position = NewOffsetPosition;
+
+
         }
+        float CameraHeight = CameraOffsetController.position.y;
+            CameraOffsetDistanceController.transform.localPosition = new Vector3(0, 0, -1 * (CameraMaxHeight - CameraHeight + 5f) );
+        
     }
 
 
