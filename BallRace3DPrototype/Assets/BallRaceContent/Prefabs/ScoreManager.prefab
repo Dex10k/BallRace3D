@@ -270,6 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4363638290348932887}
   - component: {fileID: 4363638290348932886}
+  - component: {fileID: 7912472836365006475}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -309,6 +310,14 @@ MonoBehaviour:
   Player2ScoreDisplay: {fileID: 4363638289287862694}
   Player3ScoreDisplay: {fileID: 4363638289244568644}
   Player4ScoreDisplay: {fileID: 4363638290363818524}
+--- !u!81 &7912472836365006475
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363638290348932885}
+  m_Enabled: 1
 --- !u!1 &4363638290363818515
 GameObject:
   m_ObjectHideFlags: 0

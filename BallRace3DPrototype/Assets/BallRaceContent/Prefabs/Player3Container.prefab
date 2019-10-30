@@ -90,32 +90,37 @@ PrefabInstance:
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.20650502
+      value: 0.2291315
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.42660493
+      value: 0.07153224
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10070778
+      value: -0.016886462
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8747697
+      value: 0.9706167
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3695531
+      value: -3.605992
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.327324
+      value: -9.89196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714908, guid: 45f74583ced620d488844799f1702712,
         type: 3}
@@ -166,6 +171,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565092457629605921, guid: 45f74583ced620d488844799f1702712,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.77448034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565092457629605921, guid: 45f74583ced620d488844799f1702712,
+        type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.8169584
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f74583ced620d488844799f1702712, type: 3}
