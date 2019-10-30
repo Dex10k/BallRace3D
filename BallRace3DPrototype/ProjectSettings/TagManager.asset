@@ -16,10 +16,10 @@ TagManager:
   - 
   - PostProcessing
   - Environment
-  - 
-  - 
-  - 
-  - 
+  - Player1Camera
+  - Player2Camera
+  - Player3Camera
+  - Player4Camera
   - 
   - 
   - 

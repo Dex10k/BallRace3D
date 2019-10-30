@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -58,12 +59,23 @@ public class PlayerMovement : MonoBehaviour
     public float CameraMinHeight = 3;
 
     public float CameraMinimumDistance = 5;
+    [Space(5)]
+    [Range(1, 20)]
+    public float MinSpeedForAutoCorrect = 5;
+    [Range(0,180)]
+    public float CameraAutocorrectAngleChangePerSecond = 5f;
 
     #endregion
+
+    private Player playerInput;
+
+    public int playerID;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerInput = ReInput.players.GetPlayer(playerID);
+
         rigidbodyComponent = this.GetComponent<Rigidbody>();
     }
 
@@ -72,7 +84,8 @@ public class PlayerMovement : MonoBehaviour
     {
         HorizontalMovement();
         Jump();
-        ManualCameraRotate();
+        //ManualCameraRotate();
+        //CameraAutoCorrect();
         GroundFriction();
     }
 
@@ -82,13 +95,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 MoveSpeed = Vector3.zero;
 
-        if(Input.GetAxisRaw("Horizontal") != 0)
+
+        if(playerInput.GetAxisRaw("MoveHorizontal") != 0)
         {
-            MoveSpeed += (new Vector3(Input.GetAxis("Horizontal"), 0, 0) * BaseSpeed);
+            MoveSpeed += (new Vector3(playerInput.GetAxis("MoveHorizontal"), 0, 0) * BaseSpeed);
         }
-        if (Input.GetAxisRaw("Vertical") != 0)
+        if (playerInput.GetAxisRaw("MoveVertical") != 0)
         {
-            MoveSpeed += (new Vector3(0, 0, Input.GetAxis("Vertical")) * BaseSpeed);
+            MoveSpeed += (new Vector3(0, 0, playerInput.GetAxis("MoveVertical")) * BaseSpeed);
         }
 
         //Vector3 CameraForward = CameraObject.position - this.transform.position;
@@ -139,16 +153,16 @@ public class PlayerMovement : MonoBehaviour
 
     void ManualCameraRotate()
     {
-        if (Input.GetAxisRaw("AimHorizontal") != 0) {
+        if (playerInput.GetAxisRaw("AimHorizontal") != 0) {
             //Debug.Log("Aim Horizontal Returns : " + Input.GetAxisRaw("AimHorizontal"));
-            CameraOffsetController.transform.Rotate(0, Input.GetAxis("AimHorizontal"),0,Space.Self);
+            CameraOffsetController.transform.Rotate(0, playerInput.GetAxis("AimHorizontal"),0,Space.Self);
          }
 
-        if(Input.GetAxisRaw("AimVertical") != 0)
+        if(playerInput.GetAxisRaw("AimVertical") != 0)
         {
             Vector3 NewOffsetPosition = CameraOffsetController.transform.position;
 
-            NewOffsetPosition.y += (Input.GetAxisRaw("AimVertical") * CameraSensitivityVertical * Time.deltaTime *-1f);
+            NewOffsetPosition.y += (playerInput.GetAxisRaw("AimVertical") * CameraSensitivityVertical * Time.deltaTime *-1f);
 
             if (NewOffsetPosition.y < CameraMinHeight)
             {
@@ -174,9 +188,21 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 currentObjectVelocity = rigidbodyComponent.velocity;
 
-        currentObjectVelocity.Normalize();
+        if (currentObjectVelocity.magnitude >= MinSpeedForAutoCorrect)
+        {
 
+            currentObjectVelocity.y = 0;
 
+            currentObjectVelocity.Normalize();
+
+            Vector3 CurrentCameraAngle = CameraOffsetController.transform.forward;
+
+            float RadianChangePerSecond = CameraAutocorrectAngleChangePerSecond * Mathf.Deg2Rad * Time.deltaTime;
+
+            //Vector3.RotateTowards(CurrentCameraAngle, currentObjectVelocity, RadianChangePerSecond, 0f);
+
+            CameraOffsetController.transform.forward = Vector3.RotateTowards(CurrentCameraAngle, currentObjectVelocity, RadianChangePerSecond, 0f);
+        }
 
     }
 
