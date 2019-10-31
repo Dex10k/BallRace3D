@@ -16,13 +16,19 @@ public class ScoreManager : MonoBehaviour
     public Text Player4ScoreDisplay;
 
 
+    [Space(10)]
+    [Header("SpawnLocations")]
+    public List<Transform> PossibleScoreLocations;
+
+    List<int> UsedScoreLocations;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        UsedScoreLocations = new List<int>();
+        //PossibleScoreLocations = new List<Transform>() ;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -58,5 +64,36 @@ public class ScoreManager : MonoBehaviour
         Player2ScoreDisplay.text = ("" + Player2Score);
         Player3ScoreDisplay.text = ("" + Player3Score);
         Player4ScoreDisplay.text = ("" + Player4Score);
+    }
+
+
+    public bool scoreLocationFull(int scoreLocationToCheck)
+    {
+        if(UsedScoreLocations.Count >= PossibleScoreLocations.Count)
+        {
+            Debug.LogError("All Score Volumes Are Full");
+            return false;
+        }
+
+
+        for(int _i = 0; _i < UsedScoreLocations.Count; _i++)
+        {
+            if(scoreLocationToCheck == UsedScoreLocations[_i])
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void AddToUsedLocations(int locationID)
+    {
+        UsedScoreLocations.Add(locationID);
+    }
+
+    public void RemoveFromUsedLocations(int locationID)
+    {
+        UsedScoreLocations.Remove(locationID);
     }
 }

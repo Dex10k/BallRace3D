@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     public float MinSpeedForce = 5f;
     [Range(20, 500)]
     public float MaxSpeedForce = 100f;
+
+    [Range(0,50)]
+    public float GravitationalMultiplier;
+
+
     [Range(0,20)]
 
     [Space(10)]
@@ -89,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
         //ManualCameraRotate();
         //CameraAutoCorrect();
         GroundFriction();
+        FallSpeedIncrease();
     }
 
     #region PlayerControlledFunctions
@@ -136,18 +142,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    bool GroundCheck()
-    {
-        Ray GroundCheckDirection = new Ray(this.transform.position, Vector3.down);
-        if (Physics.Raycast(GroundCheckDirection, GroundCheckDistance + this.transform.localScale.x, GroundLayer))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+   
 
     #endregion
 
@@ -242,9 +237,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void FallSpeedIncrease()
+    {
+        if (!GroundCheck())
+        {
+            rigidbodyComponent.AddForce(Vector3.down * GravitationalMultiplier,ForceMode.Force);
+        }
+    }
 
-
-
+    bool GroundCheck()
+    {
+        Ray GroundCheckDirection = new Ray(this.transform.position, Vector3.down);
+        if (Physics.Raycast(GroundCheckDirection, GroundCheckDistance + this.transform.localScale.x, GroundLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
