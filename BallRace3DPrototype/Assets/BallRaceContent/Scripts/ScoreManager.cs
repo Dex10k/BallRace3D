@@ -5,16 +5,15 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    int Player1Score = 0;
-    int Player2Score = 0;
-    int Player3Score = 0;
-    int Player4Score = 0;
+
+    int[] PlayerScore = new int[4];
 
     public Text Player1ScoreDisplay;
     public Text Player2ScoreDisplay;
     public Text Player3ScoreDisplay;
     public Text Player4ScoreDisplay;
 
+    Text[] PlayerScoreDisplay = new Text[4];
 
     [Space(10)]
     [Header("SpawnLocations")]
@@ -22,11 +21,26 @@ public class ScoreManager : MonoBehaviour
 
     List<int> UsedScoreLocations;
 
+    [Space(20)]
+    [Header("Material Lead Properties")]
 
+    public Material WallMaterial;
+    public Material GroundMaterial;
+
+    public Color[] PlayerWallColours;
+    public Color[] PlayerGroundColours;
     private void Start()
     {
         UsedScoreLocations = new List<int>();
         //PossibleScoreLocations = new List<Transform>() ;
+
+        PlayerScoreDisplay[0] = Player1ScoreDisplay;
+        PlayerScoreDisplay[1] = Player2ScoreDisplay;
+        PlayerScoreDisplay[2] = Player3ScoreDisplay;
+        PlayerScoreDisplay[3] = Player4ScoreDisplay;
+
+
+
     }
 
 
@@ -34,39 +48,34 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         UpdateUIElements();
+        ChangeStageColour();
     }
 
+    #region Score Functions
     public void addScore(int PlayerID, int ScoreIncrease)
     {
-        if(PlayerID == 0)
-        {
-            Player1Score += ScoreIncrease;
-        }
-        else if (PlayerID == 1)
-        {
-            Player2Score += ScoreIncrease;
-        }
-        else if (PlayerID == 2)
-        {
-            Player3Score += ScoreIncrease;
-        }
-        else if (PlayerID == 3)
-        {
-            Player4Score += ScoreIncrease;
-        }
+       
+            PlayerScore[PlayerID] += ScoreIncrease;
+       
     }
 
 
 
     void UpdateUIElements()
     {
-        Player1ScoreDisplay.text = ("" +Player1Score);
-        Player2ScoreDisplay.text = ("" + Player2Score);
-        Player3ScoreDisplay.text = ("" + Player3Score);
-        Player4ScoreDisplay.text = ("" + Player4Score);
+        for (int _i = 0; _i < PlayerScore.Length; _i++)
+        {
+            PlayerScoreDisplay[_i].text = ("" + PlayerScore[_i]);
+         
+        }
+
+
+        
     }
 
+    #endregion
 
+    #region Adjust Score Location
     public bool scoreLocationFull(int scoreLocationToCheck)
     {
         if(UsedScoreLocations.Count >= PossibleScoreLocations.Count)
@@ -96,4 +105,47 @@ public class ScoreManager : MonoBehaviour
     {
         UsedScoreLocations.Remove(locationID);
     }
+
+    #endregion
+
+    #region Aesthetic Functions
+
+    void ChangeStageColour()
+    {
+        int CurrentHighestScore = 0;
+
+        for (int _i = 0; _i < PlayerScore.Length; _i++)
+        {
+             if(PlayerScore[_i] > CurrentHighestScore) { CurrentHighestScore = PlayerScore[_i]; }
+        }
+
+        int numberOfPlayersInTheLead = 0;
+        int LeadPlayerID = 5;
+
+        for (int _i = 0; _i < PlayerScore.Length; _i++)
+        {
+            if(PlayerScore[_i] == CurrentHighestScore)
+            {
+                numberOfPlayersInTheLead++;
+                LeadPlayerID = _i;
+            }
+        }
+
+        if(numberOfPlayersInTheLead <= 1)
+        {
+            WallMaterial.SetColor("_BaseColor", PlayerWallColours[LeadPlayerID]);
+            
+            GroundMaterial.SetColor("_BaseColor", PlayerGroundColours[LeadPlayerID]);
+            
+        }
+        else if(numberOfPlayersInTheLead > 1)
+        {
+            WallMaterial.SetColor("_BaseColor", PlayerWallColours[4]);           
+            GroundMaterial.SetColor("_BaseColor", PlayerGroundColours[4]);            
+        }
+
+    }
+
+    #endregion
+
 }

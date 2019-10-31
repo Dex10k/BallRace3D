@@ -310,6 +310,24 @@ MonoBehaviour:
   Player2ScoreDisplay: {fileID: 4363638289287862694}
   Player3ScoreDisplay: {fileID: 4363638289244568644}
   Player4ScoreDisplay: {fileID: 4363638290363818524}
+  PossibleScoreLocations:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  WallMaterial: {fileID: 2100000, guid: 3f11b3de4bb304c47b606698c54fb398, type: 2}
+  GroundMaterial: {fileID: 2100000, guid: e618ce9ae35d23e4e8754a14a9f09a09, type: 2}
+  PlayerWallColours:
+  - {r: 0.745283, g: 0.33936992, b: 0, a: 1}
+  - {r: 0, g: 0.4332075, b: 0.7735849, a: 1}
+  - {r: 0.5133508, g: 0, b: 0.5471698, a: 1}
+  - {r: 0.28748995, g: 0.6901961, b: 0, a: 1}
+  - {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  PlayerGroundColours:
+  - {r: 0.5471698, g: 0.14465955, b: 0, a: 1}
+  - {r: 0, g: 0.34300458, b: 0.4433962, a: 1}
+  - {r: 0.3028071, g: 0, b: 0.4433962, a: 1}
+  - {r: 0.033999614, g: 0.24528301, b: 0, a: 1}
+  - {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
 --- !u!81 &7912472836365006475
 AudioListener:
   m_ObjectHideFlags: 0
