@@ -74,9 +74,20 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-    private Player playerInput;
+    #region Sound Properties
 
+    [Space(40)]
+    [Header("Sound Properties")]
+    public GameObject BounceSoundPrefab;
+    
+    [Header("Control Properties")]
+    #endregion
+
+    private Player playerInput;
+    [Space(50)]
     public int playerID;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -227,7 +238,10 @@ public class PlayerMovement : MonoBehaviour
 
     void BounceSpeedUp()
     {
-        Debug.Log("Is Bounce");
+
+        PlaySoundEffect(BounceSoundPrefab);
+
+       // Debug.Log("Is Bounce");
         if (BaseSpeed + bounceSpeedIncrement < MaxSpeedForce)
         {
             BaseSpeed += bounceSpeedIncrement;
@@ -283,6 +297,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+
+    void PlaySoundEffect(GameObject SoundObject)
+    {
+        if (Time.time > 1.5f)
+        {
+            Instantiate(SoundObject, Vector3.zero, Quaternion.identity);
+        }
+    }
 
 
 }

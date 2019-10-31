@@ -49,6 +49,7 @@ MonoBehaviour:
   BaseSpeed: 18.8
   MinSpeedForce: 10.1
   MaxSpeedForce: 200
+  GravitationalMultiplier: 0
   JumpStrength: 0
   DestroyingObstacleTag: Danger
   StartingCheckpoint: {fileID: 0}
@@ -58,6 +59,7 @@ MonoBehaviour:
   GroundCheckDistance: 0.204
   bounceSpeedIncrement: 5
   FrictionSlowPerSecond: 7.02
+  percentageOfBaseSpeedToAddToSlow: 5
   CameraObject: {fileID: 4282144971433714911}
   CameraSensitivityHorizontal: 39.2
   CameraSensitivityVertical: 17.2
@@ -68,6 +70,8 @@ MonoBehaviour:
   CameraMinimumDistance: 10
   MinSpeedForAutoCorrect: 2
   CameraAutocorrectAngleChangePerSecond: 50
+  BounceSoundPrefab: {fileID: 2378006298484416680, guid: b964812fe1e116049a738a09f8c5ca28,
+    type: 3}
   playerID: 0
 --- !u!135 &4282144970081980654
 SphereCollider:
@@ -362,7 +366,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4282144971197171993}
-  m_LocalRotation: {x: 0.22975291, y: -0.00000001854968, z: 0.0000000036869066, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975291, y: -0.000000018549683, z: 0.000000003686911, w: 0.9732491}
   m_LocalPosition: {x: 10, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -445,7 +449,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4282144971433714906}
-  m_LocalRotation: {x: 0.22975291, y: -0.00000001854968, z: 0.0000000036869066, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975291, y: -0.000000018549683, z: 0.000000003686911, w: 0.9732491}
   m_LocalPosition: {x: 10, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
