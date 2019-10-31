@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4282144970081980650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.87, y: 1.98, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4282144970725901959}
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseSpeed: 18.8
-  MinSpeedForce: 20
-  MaxSpeedForce: 158
+  MinSpeedForce: 10.1
+  MaxSpeedForce: 200
   JumpStrength: 0
   DestroyingObstacleTag: Danger
   StartingCheckpoint: {fileID: 0}
@@ -56,8 +56,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GroundCheckDistance: 0.204
-  bounceSpeedIncrement: 3.77
-  FrictionSlowPerSecond: 13.07
+  bounceSpeedIncrement: 5
+  FrictionSlowPerSecond: 7.02
   CameraObject: {fileID: 4282144971433714911}
   CameraSensitivityHorizontal: 39.2
   CameraSensitivityVertical: 17.2
@@ -362,14 +362,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4282144971197171993}
-  m_LocalRotation: {x: 0.21280889, y: 0.36682418, z: -0.086595446, w: 0.90147305}
-  m_LocalPosition: {x: 0.8877921, y: 6.98, z: -7.1588244}
+  m_LocalRotation: {x: 0.22975291, y: -0.00000001854968, z: 0.0000000036869066, w: 0.9732491}
+  m_LocalPosition: {x: 10, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4282144970830214358}
   m_Father: {fileID: 4282144971168157500}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 26.565, y: 0, z: 0}
 --- !u!114 &4282144971197171992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,8 +445,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4282144971433714906}
-  m_LocalRotation: {x: 0.22975291, y: -0.00000001854936, z: 0.0000000036855405, w: 0.9732491}
-  m_LocalPosition: {x: 16.33, y: 5, z: -10}
+  m_LocalRotation: {x: 0.22975291, y: -0.00000001854968, z: 0.0000000036869066, w: 0.9732491}
+  m_LocalPosition: {x: 10, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4282144971168157500}
@@ -719,7 +719,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -766,7 +766,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 47417
+      atime1: 16191
       atime2: 65535
       atime3: 65535
       atime4: 0

@@ -33,10 +33,12 @@ public class PlayerMovement : MonoBehaviour
     #region Bounce Properties
     [Header("Bounce Properties")]
 
-    [Range(0, 5)]
+    [Range(0, 30)]
     public float bounceSpeedIncrement = 0.3f;
     [Range(0, 15)]
     public float FrictionSlowPerSecond = 1f;
+    [Range(0,100)]
+    public float percentageOfBaseSpeedToAddToSlow = 5f;
 
     [Space (20)]
 
@@ -218,7 +220,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (BaseSpeed - FrictionSlowPerSecond * Time.deltaTime > MinSpeedForce)
             {
-                BaseSpeed -= FrictionSlowPerSecond * Time.deltaTime;
+                BaseSpeed -= (FrictionSlowPerSecond + ((BaseSpeed - MinSpeedForce)  * (0.01f * percentageOfBaseSpeedToAddToSlow))) * Time.deltaTime;
             }
             else if (BaseSpeed - FrictionSlowPerSecond * Time.deltaTime <= MinSpeedForce)
             {
