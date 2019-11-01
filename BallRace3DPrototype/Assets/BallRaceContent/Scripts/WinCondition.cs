@@ -17,8 +17,12 @@ public class WinCondition : MonoBehaviour
 
     int[] PlayerLapNumber = new int[4];
     bool[] PlayerHasMadeALap = new bool[4];
+    bool[] PlayerHasFinished = new bool[4];
 
     public GameObject scoreManager;
+    public GameObject winScreen;
+    public GameObject ScoreDisplay;
+    
     ScoreManager scoreManagerComponent;
 
 
@@ -39,12 +43,13 @@ public class WinCondition : MonoBehaviour
         {
             PlayerLapNumber[PlayerID]++;
             PlayerHasMadeALap[PlayerID] = true;
+            if (PlayerLapNumber[PlayerID] >= NumberOfLapsToEnd && !PlayerHasFinished[PlayerID])
+            {
+                CompletedRace(PlayerID);
+            }
         }
 
-        if(PlayerLapNumber[PlayerID] >= NumberOfLapsToEnd)
-        {
-            CompletedRace(PlayerID);
-        }
+        
     }
 
 
@@ -61,10 +66,16 @@ public class WinCondition : MonoBehaviour
         {
             scoreManagerComponent.addScore(PlayerID, ThirdPlaceScoreBonus);
         }
-        else
+        else if(NumberOfPlayersFinished == 3)
         {
             scoreManagerComponent.addScore(PlayerID, FourthPlaceScoreBonus);
         }
+
+        NumberOfPlayersFinished++;
+        PlayerHasFinished[PlayerID] = true;
+
+        CheckWin();
+        
     }
 
 
@@ -81,6 +92,27 @@ public class WinCondition : MonoBehaviour
 
     public void PassedHalfWay(int PlayerID)
     {
-        PlayerHasMadeALap[PlayerID] = true;
+        PlayerHasMadeALap[PlayerID] = false;
+    }
+
+    void CheckWin()
+    {
+        int NumberOfFinishes = 0;
+        for(int i =0; i < PlayerHasFinished.Length; i++)
+        {
+            if (PlayerHasFinished[i])
+            {
+                NumberOfFinishes++;
+            }
+        }
+
+        if(NumberOfFinishes == 4)
+        {
+            //ShowScoreEndGame
+            winScreen.SetActive(true);
+            winScreen.GetComponent<GrabScoreData>().UpdateScoreData();
+            ScoreDisplay.SetActive(false);
+            
+        }
     }
 }
