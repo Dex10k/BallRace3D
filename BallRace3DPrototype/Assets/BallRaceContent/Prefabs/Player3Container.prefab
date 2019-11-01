@@ -90,32 +90,32 @@ PrefabInstance:
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2291315
+      value: 0.22807637
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.07153224
+      value: 0.11736025
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.016886462
+      value: -0.027704984
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9706167
+      value: 0.9661471
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.605992
+      value: -4.094123
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.89196
+      value: -9.70918
       objectReference: {fileID: 0}
     - target: {fileID: 4282144971433714911, guid: 45f74583ced620d488844799f1702712,
         type: 3}
@@ -181,6 +181,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Parameters.colorGradient.key1.b
       value: 0.8169584
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495374408811310673, guid: 45f74583ced620d488844799f1702712,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.64108324
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495374408811310673, guid: 45f74583ced620d488844799f1702712,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495374408811310673, guid: 45f74583ced620d488844799f1702712,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.99215686
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f74583ced620d488844799f1702712, type: 3}
