@@ -93,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerInput = ReInput.players.GetPlayer(playerID);
-
         rigidbodyComponent = this.GetComponent<Rigidbody>();
     }
 
@@ -101,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         HorizontalMovement();
-        Jump();
+        //Jump();
         //ManualCameraRotate();
         //CameraAutoCorrect();
         GroundFriction();

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class GrabScoreData : MonoBehaviour
 {
 
@@ -18,7 +17,7 @@ public class GrabScoreData : MonoBehaviour
 
     private void Start()
     {
-        
+         
     }
 
     // Start is called before the first frame update
@@ -26,7 +25,10 @@ public class GrabScoreData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Jump"))
+        {
+            returnToMainMenu();
+        }
     }
 
 
@@ -65,8 +67,10 @@ public class GrabScoreData : MonoBehaviour
 
     }
 
-    void UpdateUIElements()
+
+    public void returnToMainMenu()
     {
-        
+        Debug.Log("Attempting To Swap Scenes");
+        SceneManager.LoadScene(0);
     }
 }

@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Default Content/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/BallRaceContent/Scenes/Movement Test Scene.unity
     guid: 76615f92b0f8d8044a4c0950f246a642
-  - enabled: 1
+  - enabled: 0
     path: Assets/BallRaceContent/Scenes/Level.unity
     guid: c241d35dfd3359e409addaf307d2e0ee
+  - enabled: 1
+    path: Assets/BallRaceContent/Scenes/StartScreen.unity
+    guid: 5be37dcd0b594d7468c0da22bc114a1d
+  - enabled: 1
+    path: Assets/BallRaceContent/Scenes/Large Level.unity
+    guid: c7dc71b00743594459b6fdc57a1e6a86
   m_configObjects: {}
