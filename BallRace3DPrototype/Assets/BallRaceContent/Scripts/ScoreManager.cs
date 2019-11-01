@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-
-    int[] PlayerScore = new int[4];
+    [HideInInspector]
+    public int[] PlayerScore = new int[4];
 
     public Text Player1ScoreDisplay;
     public Text Player2ScoreDisplay;
@@ -72,10 +72,7 @@ public class ScoreManager : MonoBehaviour
         {
             PlayerScoreDisplay[_i].text = ("" + PlayerScore[_i]);
          
-        }
-
-
-        
+        }        
     }
 
     #endregion

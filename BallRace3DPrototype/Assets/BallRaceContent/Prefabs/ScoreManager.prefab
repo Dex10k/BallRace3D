@@ -300,14 +300,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4363638290348932887}
   - component: {fileID: 4363638290348932886}
-  - component: {fileID: 7912472836365006475}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4363638290348932887
 Transform:
   m_ObjectHideFlags: 0
@@ -344,6 +343,34 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   WallMaterial: {fileID: 2100000, guid: 3f11b3de4bb304c47b606698c54fb398, type: 2}
   GroundMaterial: {fileID: 2100000, guid: e618ce9ae35d23e4e8754a14a9f09a09, type: 2}
   PlayerWallColours:
@@ -358,14 +385,6 @@ MonoBehaviour:
   - {r: 0.3028071, g: 0, b: 0.4433962, a: 1}
   - {r: 0.033999614, g: 0.24528301, b: 0, a: 1}
   - {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
---- !u!81 &7912472836365006475
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4363638290348932885}
-  m_Enabled: 1
 --- !u!1 &4363638290363818515
 GameObject:
   m_ObjectHideFlags: 0
