@@ -29,6 +29,9 @@ public class ScoreManager : MonoBehaviour
 
     public Color[] PlayerWallColours;
     public Color[] PlayerGroundColours;
+
+    private ScoreVisual[] scoreImages;
+
     private void Start()
     {
         UsedScoreLocations = new List<int>();
@@ -39,7 +42,7 @@ public class ScoreManager : MonoBehaviour
         PlayerScoreDisplay[2] = Player3ScoreDisplay;
         PlayerScoreDisplay[3] = Player4ScoreDisplay;
 
-
+        scoreImages = GetComponentsInChildren<ScoreVisual>();
 
     }
 
@@ -56,7 +59,9 @@ public class ScoreManager : MonoBehaviour
     {
        
             PlayerScore[PlayerID] += ScoreIncrease;
-       
+
+        scoreImages[PlayerID].OnScoreIncrease();
+
     }
 
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4363638289244568666}
   - component: {fileID: 4363638289244568667}
   - component: {fileID: 4363638289244568644}
+  - component: {fileID: 58941568554609364}
   m_Layer: 5
   m_Name: P3Score
   m_TagString: Untagged
@@ -34,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.8, y: -19.81}
-  m_SizeDelta: {x: 160.91, y: 186.4}
+  m_AnchoredPosition: {x: -40, y: -50}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4363638289244568667
 CanvasRenderer:
@@ -65,11 +66,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 83
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 50
+    m_MaxSize: 83
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -79,6 +80,20 @@ MonoBehaviour:
   m_Text: '1
 
 '
+--- !u!114 &58941568554609364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363638289244568665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c1d1b98fb8ce1428c2f0d47d95e4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scorePunchAmount: 2
+  m_scorePunchTime: 1
 --- !u!1 &4363638289287862715
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +105,7 @@ GameObject:
   - component: {fileID: 4363638289287862692}
   - component: {fileID: 4363638289287862693}
   - component: {fileID: 4363638289287862694}
+  - component: {fileID: 630211534734255048}
   m_Layer: 5
   m_Name: P2Score
   m_TagString: Untagged
@@ -113,8 +129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.81, y: 22.25}
-  m_SizeDelta: {x: 160.91, y: 186.4}
+  m_AnchoredPosition: {x: 40, y: 50}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4363638289287862693
 CanvasRenderer:
@@ -144,11 +160,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 83
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 50
+    m_MaxSize: 83
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -158,6 +174,20 @@ MonoBehaviour:
   m_Text: '1
 
 '
+--- !u!114 &630211534734255048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363638289287862715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c1d1b98fb8ce1428c2f0d47d95e4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scorePunchAmount: 2
+  m_scorePunchTime: 1
 --- !u!1 &4363638289693155389
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +377,7 @@ GameObject:
   - component: {fileID: 4363638290363818526}
   - component: {fileID: 4363638290363818525}
   - component: {fileID: 4363638290363818524}
+  - component: {fileID: 2864906469833844818}
   m_Layer: 5
   m_Name: P4Score
   m_TagString: Untagged
@@ -370,8 +401,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.66, y: -19.81}
-  m_SizeDelta: {x: 160.91, y: 186.4}
+  m_AnchoredPosition: {x: 40, y: -50}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4363638290363818525
 CanvasRenderer:
@@ -401,11 +432,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 83
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 50
+    m_MaxSize: 83
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -415,6 +446,20 @@ MonoBehaviour:
   m_Text: '1
 
 '
+--- !u!114 &2864906469833844818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363638290363818515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c1d1b98fb8ce1428c2f0d47d95e4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scorePunchAmount: 2
+  m_scorePunchTime: 1
 --- !u!1 &4363638290703504684
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +471,7 @@ GameObject:
   - component: {fileID: 4363638290703504685}
   - component: {fileID: 4363638290703504686}
   - component: {fileID: 4363638290703504687}
+  - component: {fileID: 8585620442432403234}
   m_Layer: 5
   m_Name: P1Score
   m_TagString: Untagged
@@ -449,8 +495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.3, y: 22.25}
-  m_SizeDelta: {x: 160.91, y: 186.4}
+  m_AnchoredPosition: {x: -40, y: 50}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4363638290703504686
 CanvasRenderer:
@@ -480,11 +526,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 83
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 50
+    m_MaxSize: 83
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -494,6 +540,20 @@ MonoBehaviour:
   m_Text: '1
 
 '
+--- !u!114 &8585620442432403234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363638290703504684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c1d1b98fb8ce1428c2f0d47d95e4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scorePunchAmount: 2
+  m_scorePunchTime: 1
 --- !u!1 &4363638290907184975
 GameObject:
   m_ObjectHideFlags: 0
